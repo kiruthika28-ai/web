@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Page</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <h1>Take the Quiz</h1>
+  <form id="quizForm">
+    <div>
+      <p>1. What does DOM stand for?</p>
+      <input type="radio" name="q1" value="A"> Document Object Model<br>
+      <input type="radio" name="q1" value="B"> Data Object Map<br>
+    </div>
+    <div>
+      <p>2. What’s the function of a Pivot Table?</p>
+      <input type="radio" name="q2" value="A"> Create graphs<br>
+      <input type="radio" name="q2" value="B"> Summarize data<br>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('quizForm').onsubmit = function(e) {
+      e.preventDefault();
+      alert("Quiz submitted!");
+      // You can add scoring logic here
+    };
+  </script>
+</body>
+</html>
