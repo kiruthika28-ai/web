@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificate</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <h1>Get Your Certificate</h1>
+  <form id="certForm">
+    <label>Your Name:</label>
+    <input type="text" id="name" required>
+    <button type="submit">Generate Certificate</button>
+  </form>
+  <canvas id="certCanvas" width="600" height="400"></canvas>
+
+  <script>
+    const form = document.getElementById('certForm');
+    const canvas = document.getElementById('certCanvas');
+    const ctx = canvas.getContext('2d');
+
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.font = "30px Arial";
+      ctx.fillText("Certificate of Completion", 150, 100);
+      ctx.font = "20px Arial";
+      ctx.fillText(`Awarded to: ${name}`, 200, 200);
+    };
+  </script>
+</body>
+</html>
